@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.amlzq.asb.image"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation "junit:junit:$rootProject.ext.junitVersion"
+    androidTestImplementation "com.android.support.test:runner:$rootProject.runnerVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
+
+    implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+
+    implementation project(':image')
+
+    // glide
+    // Glide v4 requires Android Ice Cream Sandwich (API level 14) or higher.
+//    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation("com.github.bumptech.glide:glide:4.8.0") {
+        exclude group: "com.android.support"
+    }
+    // 处理注解
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    // using OkHttp to load all images from http and https urls.
+    implementation "com.github.bumptech.glide:okhttp3-integration:4.8.0"
+    // An Android transformation library providing a variety of image transformations for Glide.
+    implementation 'jp.wasabeef:glide-transformations:4.0.1'
+
+}
