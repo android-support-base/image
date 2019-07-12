@@ -1,8 +1,7 @@
 # android-support-image
-* dependencies JDK
-* dependencies Android Platform API
-* dependencies Android Support API
-* 与support-log类似，提供一个基于Android Platform API基础功能，一个基于第三方SDK实现
+```
+提供一个基于Android Platform API基础功能，一个基于第三方SDK实现
+```
 
 ## 发布
 * 最新版本
