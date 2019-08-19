@@ -42,4 +42,9 @@ dependencies {
     // An Android transformation library providing a variety of image transformations for Glide.
     implementation 'jp.wasabeef:glide-transformations:4.0.1'
 
+    // 触摸手势实现支持缩放的ImageView
+    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+    // 图片浏览缩放控件
+    // implementation 'com.bm.photoview:library:1.4.1'
+
 }
